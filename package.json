@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "NODE_ENV=production node app.js",
     "test": "node_modules/.bin/mocha tests/**"
   },
   "repository": {
@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "express": "^4.13.4",
+    "mongodb": "^2.1.18",
     "jade": "^1.11.0"
   },
   "devDependencies": {
+    "morgan": "^1.7.0",
     "mocha": "^2.4.5",
     "supertest": "^1.2.0"
   },
