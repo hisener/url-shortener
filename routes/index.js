@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-
+router.get('/', function (req, res) {
   res.render('index', {
     title: 'API Project: URL Shortener Microservice',
     desc: '',
   });
 });
 
-router.use('/', require('./api.js'));
+router.use('/new', require('./newUrl'));
+router.use('/', require('./redirect'));
 
 module.exports = router;
