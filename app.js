@@ -1,5 +1,8 @@
 'use strict';
+
+var http = require('http');
 var express = require('express');
+
 var db = require(process.cwd() + '/models/db');
 var routes = require(process.cwd() + '/routes');
 
@@ -8,11 +11,6 @@ var development = app.get('env') === 'development';
 
 // Set the view engine
 app.set('view engine', 'jade');
-
-if(development) {
-  var morgan = require('morgan');
-  app.use(morgan('dev'));
-}
 
 app.use(express.static(process.cwd() + '/public'));
 app.use('/', routes);
@@ -36,12 +34,10 @@ app.use(function (err, req, res, next) {
 
 // Connect MongoDB
 db.connect(function (err) {
-  if (err) {
-    console.log('Connection error to MongoDB.');
-    process.exit(1);
-  }
+  if (err)
+    throw new Error('Connection error to MongoDB.');
+  
   // Create HTTP server with app
-  var http = require('http');
   var server = http.createServer(app);
 
   // Listen to port 3000
