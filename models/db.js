@@ -1,6 +1,8 @@
 var MongoClient = require('mongodb').MongoClient;
 
 var url = 'mongodb://localhost:27017/urlshortener';
+var collection = 'shortlinks';
+
 var state = {
   db: null
 };
@@ -20,6 +22,10 @@ exports.connect = function (done) {
 exports.get = function () {
   return state.db;
 };
+
+exports.getCollection = function() {
+  return this.get().collection(collection);
+}
 
 exports.close = function (done) {
   if (state.db) {
