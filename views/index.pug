@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+  - var exampleUrl = 'https://www.freecodecamp.com/challenges/url-shortener-microservice'
+
+  h1 API Project: URL Shortener Microservice
+  p FreeCodeCamp API Projects #3
+  hr
+  div.row
+    div.col-xs-12
+      h4 Shortening URL
+      pre GET /new/:url (string)
+      p
+        strong Example usage
+      p
+        a(href=path + 'new/' + exampleUrl target='_blank') #{path}new/#{exampleUrl}
+      p
+        strong Response example
+      code { "original_url": "#{exampleUrl}", "short_url": "http://localhost:3000/aaj" }
+
+      h4 Usage
+      p
+        a(href='http://localhost:3000/aaj' target='_blank') http://localhost:3000/aaj
+  hr
+  p
+    a(href='https://github.com/hisener/url-shortener' target='_blank') Github repository

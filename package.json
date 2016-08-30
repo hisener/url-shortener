@@ -11,15 +11,17 @@
     "type": "git",
     "url": "git+https://github.com/hisener/url-shortener.git"
   },
+  "engines": {
+    "node": "^6.4.0",
+    "npm": "^3.10.6"
+  },
   "dependencies": {
-    "express": "^4.13.4",
-    "mongodb": "^2.1.18",
-    "jade": "^1.11.0"
+    "express": "^4.14.0",
+    "mongodb": "^2.2.9",
+    "pug": "^2.0.0-beta6"
   },
   "devDependencies": {
-    "morgan": "^1.7.0",
-    "mocha": "^2.4.5",
-    "supertest": "^1.2.0"
+    "mocha": "^3.0.2"
   },
   "keywords": [
     "url shortener", "api", "microservice", "free code camp"
