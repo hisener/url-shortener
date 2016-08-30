@@ -4,7 +4,7 @@ var router = express.Router()
 router.get('/', function (req, res) {
   var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
   res.render('index', {
-    index: 'API Project: URL Shortener Microservice',
+    title: 'API Project: URL Shortener Microservice',
     path: fullUrl
   })
 })

@@ -17,11 +17,11 @@ block content
         a(href=path + 'new/' + exampleUrl target='_blank') #{path}new/#{exampleUrl}
       p
         strong Response example
-      code { "original_url": "#{exampleUrl}", "short_url": "http://localhost:3000/aaj" }
+      code { "original_url": "#{exampleUrl}", "short_url": "#{path}aaj" }
 
       h4 Usage
       p
-        a(href='http://localhost:3000/aaj' target='_blank') http://localhost:3000/aaj
+        a(href=path + 'aaj' target='_blank') #{path}aaj
   hr
   p
     a(href='https://github.com/hisener/url-shortener' target='_blank') Github repository
